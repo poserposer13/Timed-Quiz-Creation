@@ -1,38 +1,38 @@
 // This is an array for each question so I can pull from it later
 const questions = [
     {
-        questionOne: "",
-        correctAnswer: "",
+        questionOne: "What does CSS stand for?",
+        correctAnswer: "Cascading Style Sheet",
         allAnswers: [
-            "", "", "",""
+            "Cascading Style Sheet", "Corisant Super Speedway", "Cyan Style Sheet","Computer Super Soldier"
         ]
     },
     {
-        questionTwo: "",
-        correctAnswer: "",
+        questionTwo: "What isn't a primitive date type in Javascript?",
+        correctAnswer: "Array",
         allAnswers: [
-            "", "", "",""
+            "Strings", "Arrays", "Numbers","Booleans"
         ]
     },
     {
-        questionThree: "",
-        correctAnswer: "",
+        questionThree: "What is the method best used for debugging in Javascript?",
+        correctAnswer: "console.log",
         allAnswers: [
-            "", "", "",""
+            "function", "inspect", "console.log","camel-casing"
         ]
     },
     {
-        questionFour: "",
-        correctAnswer: "",
+        questionFour: "What does DOM stand for?",
+        correctAnswer: "Document Object Model",
         allAnswers: [
-            "", "", "",""
+            "Document Object Model", "Data Object Material", "Dates On Monday","DOM"
         ]
     },
     {
-        questionFive: "",
-        correctAnswer: "",
+        questionFive: "What denotes something as a string in Javascript?",
+        correctAnswer: "Quotations",
         allAnswers: [
-            "", "", "",""
+            "Brackets", "Quotations", "Angle Brackets","Semi-Colons"
         ]
     }
 ];
@@ -57,7 +57,9 @@ let allAnswerFive = document.querySelector('#answer5');
 
 
 function renderCurrentQuestion(){
-    for ()
+    for (let i = 0; i < questions.length; i++){
+
+    }
 }
 // }
 // document.addEventListener("click", function (event) {
