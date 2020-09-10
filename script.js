@@ -59,8 +59,9 @@ let correctDisplay = document.querySelector('#correct');
 let wrongDisplay = document.querySelector('#wrong');
 
 let highScorePage = document.querySelector('#high-score-page');
-let highScore = document.querySelector('#high-score');
+let initialInput = document.querySelector('#initial-input');
 let highScoreBtn = document.querySelector('#score-button');
+let highScoresList = document.querySelector('#high-scores-list');
 
 
 
@@ -119,30 +120,47 @@ function beginQuiz() {
     };
 
     function renderHighScores() {
+        startingPage.classList.add('d-none');
         wrongDisplay.classList.add('d-none');
         correctDisplay.classList.add('d-none');
         questionPage.classList.add('d-none');
         highScorePage.classList.remove('d-none');
-
-
+        // initialsInput();
 
     };
-    function initialSave() {
-        
-        let initializer = highScore.value.trim();
-        if (initializer !== "") {
-            let highScore = JSON.parse(window.localStorage.getItem("high-score") || "[]");
 
-            let newScore = {
-                score: secondsLeft,
-                highScore: initializer,
-            }
-            highScore.push(newScore);
-            window.localStorage.setItem("high-score", JSON.stringify(highScore));
-            window.location.href = "index.html";
-        }
-    };
-    highScoreBtn.addEventListener('click', initialSave);
+
+
+    // function initialsInput() {
+    //     let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    //     let newScore = {
+    //         score: secondsLeft,
+    //         initials: initialsInput
+    //     }
+    //     highScores.push(newScore);
+    //     window.localStorage.setItem('highScores', JSON.stringify(highScores));
+    //     window.location.href = 'index.html';
+
+    // }
+
+
+
+    // function initialSave() {
+
+    //     let initializer = highScore.value.trim();
+    //     if (initializer !== "") {
+    //         let highScore = JSON.parse(window.localStorage.getItem("high-score") || "[]");
+
+    //         let newScore = {
+    //             score: secondsLeft,
+    //             highScore: initializer,
+    //         }
+    //         highScore.push(newScore);
+    //         window.localStorage.setItem("high-score", JSON.stringify(highScore));
+    //         window.location.href = "index.html";
+    //     }
+    // };
+    // highScoreBtn.addEventListener('click', initialSave);
 
     // Setting the Timer
     function setTime() {
@@ -150,7 +168,7 @@ function beginQuiz() {
             secondsLeft--;
             timeEl.textContent = secondsLeft;
 
-            if (secondsLeft === 0) {
+            if (secondsLeft === 0 || currentQuestion === questions.length) {
                 clearInterval(timerInterval);
                 renderHighScores();
             }
