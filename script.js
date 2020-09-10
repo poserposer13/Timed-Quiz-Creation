@@ -63,6 +63,8 @@ let initialInput = document.querySelector('#initial-input');
 let highScoreBtn = document.querySelector('#button-addon2');
 let highScoreList = document.querySelector('#high-scores-list');
 
+let restartQuizBtn = document.querySelector('#restartQuiz');
+
 
 
 
@@ -126,17 +128,14 @@ function beginQuiz() {
         questionPage.classList.add('d-none');
         highScorePage.classList.remove('d-none');
         initialSave();
-
+    
     };
-
-
-
 
     function initialSave() {
 
         let initializer = initialInput.value.trim();
         if (initializer !== "") {
-           let highScoresList = JSON.parse(window.localStorage.getItem("high-score") || "[]");
+            let highScoresList = JSON.parse(window.localStorage.getItem("high-score") || "[]");
 
             let newScore = {
                 score: secondsLeft,
@@ -144,15 +143,24 @@ function beginQuiz() {
             }
             highScoresList.push(newScore);
             window.localStorage.setItem("high-score", JSON.stringify(highScoresList));
-            // window.location.href = "index.html";
             
+
         }
-        let scoreListEl = document.createElement("li");
-        scoreListEl.textContent = initializer;
-        highScoreList.appendChild(scoreListEl);
+        displayHighScores();
+        function displayHighScores(){
+            let scoreListEl = document.createElement("li");
+            scoreListEl.textContent = initializer + " " + secondsLeft;
+            highScoreList.appendChild(scoreListEl);
+        }
         
     };
     highScoreBtn.addEventListener('click', initialSave);
+  
+
+    restartQuizBtn.addEventListener('click', restartQuiz);
+    function restartQuiz() {
+        location.reload();
+    }
 
     // Setting the Timer
     function setTime() {
