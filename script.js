@@ -127,7 +127,7 @@ function beginQuiz() {
         correctDisplay.classList.add('d-none');
         questionPage.classList.add('d-none');
         highScorePage.classList.remove('d-none');
-        initialSave();
+        
     
     };
 
@@ -146,12 +146,11 @@ function beginQuiz() {
             
 
         }
-        displayHighScores();
-        function displayHighScores(){
+    
             let scoreListEl = document.createElement("li");
             scoreListEl.textContent = initializer + " " + secondsLeft;
             highScoreList.appendChild(scoreListEl);
-        }
+        
         
     };
     highScoreBtn.addEventListener('click', initialSave);
