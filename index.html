@@ -9,11 +9,11 @@
     <title>Timed Quiz</title>
 </head>
 
-<body>
+<body class="bg-secondary">
 
     <div class='container-fluid'>
         <div class='row'>
-            <div class='col-9'>
+            <div class='col-9 text-white'>
                 <h2>Coding Quiz</h2>
             </div>
             <div class='col-3'>
@@ -27,16 +27,16 @@
         </div>
         <div class="row">
             <div class="col align-self-center">
-                <button type="button" class="btn btn-primary btn-lg" id="begin-quiz">Begin Quiz</button>
+                <button type="button" class="btn btn-info btn-lg" id="begin-quiz">Begin Quiz</button>
             </div>
         </div>
         <div class='row d-none' id="question-page">
             <div class='col align-self-center'>
                 <h1 id='question'>Question</h1>
-                <button type="button" class="btn btn-secondary answer" id="answer1">Answer</button>
-                <button type="button" class="btn btn-secondary answer" id="answer2">Answer</button>
-                <button type="button" class="btn btn-secondary answer" id="answer3">Answer</button>
-                <button type="button" class="btn btn-secondary answer" id="answer4">Answer</button>
+                <button type="button" class="btn btn-info answer" id="answer1">Answer</button>
+                <button type="button" class="btn btn-info answer" id="answer2">Answer</button>
+                <button type="button" class="btn btn-info answer" id="answer3">Answer</button>
+                <button type="button" class="btn btn-info answer" id="answer4">Answer</button>
             </div>
         </div>
         <div class="row">
@@ -52,13 +52,13 @@
                 <input type="text" class="form-control" placeholder="Enter Initials" aria-label="Enter Initials"
                     aria-describedby="button-addon2" id="initial-input">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+                    <button class="btn btn-info" type="button" id="button-addon2">Submit</button>
                 </div>
                 
             </div>
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-secondary btn-lg" id='restartQuiz'>Restart?</button>
+                    <button class="btn btn-danger btn-lg" id='restartQuiz'>Restart?</button>
                 </div>
             </div>
         </div>
