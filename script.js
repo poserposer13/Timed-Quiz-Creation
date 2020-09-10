@@ -64,7 +64,7 @@ let highScoreBtn = document.querySelector('#button-addon2');
 let highScoreList = document.querySelector('#high-scores-list');
 
 let restartQuizBtn = document.querySelector('#restartQuiz');
-
+let currentState = document.querySelectorAll('.currentState')
 
 
 
@@ -135,17 +135,17 @@ function beginQuiz() {
 
         let initializer = initialInput.value.trim();
         if (initializer !== "") {
-            let highScoresList = JSON.parse(window.localStorage.getItem("high-score") || "[]");
+            let highScoresList = JSON.parse(window.localStorage.getItem("highScores") || "[]");
 
             let newScore = {
                 score: secondsLeft,
-                highScore: initializer,
-            }
+                name: initializer,
+            };
             highScoresList.push(newScore);
-            window.localStorage.setItem("high-score", JSON.stringify(highScoresList));
+            window.localStorage.setItem("highScores", JSON.stringify(highScoresList));
             
 
-        }
+        };
     
             let scoreListEl = document.createElement("li");
             scoreListEl.textContent = initializer + " " + secondsLeft;
